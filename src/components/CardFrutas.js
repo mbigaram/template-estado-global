@@ -4,19 +4,32 @@ import styled from "styled-components";
 export default function CardFruta({ image, name, price, id, comprar }) {
   return (
     <CardContainer>
-      <Image src={"https://www.proativaalimentos.com.br/image/cache/catalog/img_prod/oleo-essencia-morango-100ml-fruta-puro-essencia-massagem-D_NQ_NP_960102-MLB31202671230_062019-F[1]-1000x1000.jpg"} alt={"Morango"} />
-      <p>{"Morango"}</p>
-      <p>R${10}</p>
-      <button>Comprar</button>
+      <Image src={image} alt={name} />
+      <h4>{name}</h4>
+      <p>R${price}</p>
+      <Button onClick={()=>comprar(id)}>Comprar</Button>
     </CardContainer>
   );
 }
+
+const Button = styled.button`
+    color: white;
+    padding: 10px;
+    
+    width: 140px;
+    background-color: goldenrod;
+    border: 2px solid goldenrod;
+    border-radius: 5px;
+`
 const Image = styled.img`
-  width: 80%;
+  width: 80px;
+  height: 80px;
 `;
 const CardContainer = styled.section`
   width: 150px;
-  border: 1px solid black;
+  border: 2px solid goldenrod;
+  border-radius: 15px;
+  box-shadow: 3px 7px  15px grey;
   margin: 10px;
   padding: 10px;
 `;
